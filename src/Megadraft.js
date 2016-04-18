@@ -9,7 +9,7 @@ import {Editor, RichUtils} from "draft-js";
 
 import icons from "./icons";
 import Toolbar from "./Toolbar";
-
+import Sidebar from "./components/Sidebar";
 
 export default class Megadraft extends Component {
   constructor(props) {
@@ -46,6 +46,9 @@ export default class Megadraft extends Component {
     return (
       <div className="megadraft">
         <div className="megadraft-editor" id="megadraft-editor" ref="editor">
+          <Sidebar
+            editorState={editorState}
+            onChange={::this.onChange}/>
           <Editor
             handleKeyCommand={::this.handleKeyCommand}
             editorState={editorState}
